@@ -1,0 +1,21 @@
+[programs.localnet]
+animal_trading_farm = "6iHfHR4e2KusjUQMoqEgjNqaxw4Cgg5R3xgKrCorxEHN"
+
+[registry]
+url = "https://anchor.projectserum.com"
+
+[provider]
+cluster = "localnet"
+wallet = "/Users/fmendez/.config/solana/id.json"
+
+[scripts]
+test = "yarn run ts-mocha -p ./tsconfig.json -t 1000000 tests/**/*.ts"
+
+# mint token BvY3cogjXKugGzTFKvzE6gMYeZTaUzbvDhxFK9x5aHPd  //cow
+# account that holds the above token A7JhceTEw4pvyZrYwJ9rerLBQcjk1sRoqsqr7BJ4akHh // cows
+
+# mint token 8pumK7CRaiFpwMHTh28bXPzNUA4z4xrPhV8tJwrNHazV // frog
+# account that holds the above token 8qAHyo294h6wZcBq4uqfBamhFKDWmEU4AmvifqkU4BkA // frogs
+
+# mint token FL1eeDCFcLAwoyQyAPjCnWtcupADh3iNBkbe3jkSCdHo // pig
+# account that holds the above token FEpcm9kaGfQ1oH759pLW2tzPWg7xGGzeckUZScfBmFmq // pigs

@@ -1,0 +1,15 @@
+projects:
+  animaltradingfarm:
+    schemaPath: src/graphql/schema.json
+    includes:
+      - src/graphql/**/*.ts
+    excludes:
+      - ./amplify/**
+    extensions:
+      amplify:
+        codeGenTarget: typescript
+        generatedFileName: src/off-chain.ts
+        docsFilePath: src/graphql
+extensions:
+  amplify:
+    version: 3

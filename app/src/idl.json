@@ -1,0 +1,232 @@
+{
+  "version": "0.0.0",
+  "name": "animal_trading_farm",
+  "instructions": [
+    {
+      "name": "makeOffer",
+      "accounts": [
+        {
+          "name": "offer",
+          "isMut": true,
+          "isSigner": true
+        },
+        {
+          "name": "whoMadeTheOffer",
+          "isMut": true,
+          "isSigner": true
+        },
+        {
+          "name": "tokenAccountFromWhoMadeTheOffer",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "escrowedTokensOfOfferMaker",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "kindOfTokenOffered",
+          "isMut": false,
+          "isSigner": false
+        },
+        {
+          "name": "kindOfTokenWantedInReturn",
+          "isMut": false,
+          "isSigner": false
+        },
+        {
+          "name": "tokenProgram",
+          "isMut": false,
+          "isSigner": false
+        },
+        {
+          "name": "systemProgram",
+          "isMut": false,
+          "isSigner": false
+        },
+        {
+          "name": "rent",
+          "isMut": false,
+          "isSigner": false
+        }
+      ],
+      "args": [
+        {
+          "name": "escrowedTokensOfOfferMakerBump",
+          "type": "u8"
+        },
+        {
+          "name": "imOfferingThisMuch",
+          "type": "u64"
+        },
+        {
+          "name": "howMuchIWantOfWhatYouHave",
+          "type": "u64"
+        }
+      ]
+    },
+    {
+      "name": "acceptOffer",
+      "accounts": [
+        {
+          "name": "offer",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "escrowedTokensOfOfferMaker",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "whoMadeTheOffer",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "whoIsTakingTheOffer",
+          "isMut": false,
+          "isSigner": true
+        },
+        {
+          "name": "accountHoldingWhatMakerWillGet",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "accountHoldingWhatReceiverWillGive",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "accountHoldingWhatReceiverWillGet",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "kindOfTokenWantedInReturn",
+          "isMut": false,
+          "isSigner": false
+        },
+        {
+          "name": "tokenProgram",
+          "isMut": false,
+          "isSigner": false
+        }
+      ],
+      "args": []
+    },
+    {
+      "name": "cancelOffer",
+      "accounts": [
+        {
+          "name": "offer",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "whoMadeTheOffer",
+          "isMut": true,
+          "isSigner": true
+        },
+        {
+          "name": "whereTheEscrowedAccountWasFundedFrom",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "escrowedTokensOfOfferMaker",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "tokenProgram",
+          "isMut": false,
+          "isSigner": false
+        }
+      ],
+      "args": []
+    },
+    {
+      "name": "airdrop",
+      "accounts": [
+        {
+          "name": "mint",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "destination",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "payer",
+          "isMut": true,
+          "isSigner": true
+        },
+        {
+          "name": "systemProgram",
+          "isMut": false,
+          "isSigner": false
+        },
+        {
+          "name": "tokenProgram",
+          "isMut": false,
+          "isSigner": false
+        },
+        {
+          "name": "associatedTokenProgram",
+          "isMut": false,
+          "isSigner": false
+        },
+        {
+          "name": "rent",
+          "isMut": false,
+          "isSigner": false
+        }
+      ],
+      "args": [
+        {
+          "name": "mintSeed",
+          "type": "bytes"
+        },
+        {
+          "name": "mintBump",
+          "type": "u8"
+        },
+        {
+          "name": "amount",
+          "type": "u64"
+        }
+      ]
+    }
+  ],
+  "accounts": [
+    {
+      "name": "Offer",
+      "type": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "whoMadeTheOffer",
+            "type": "publicKey"
+          },
+          {
+            "name": "kindOfTokenWantedInReturn",
+            "type": "publicKey"
+          },
+          {
+            "name": "amountReceivedIfOfferAccepted",
+            "type": "u64"
+          },
+          {
+            "name": "escrowedTokensOfOfferMakerBump",
+            "type": "u8"
+          }
+        ]
+      }
+    }
+  ]
+}
